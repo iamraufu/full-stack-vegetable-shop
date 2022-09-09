@@ -88,6 +88,6 @@ client.connect(err => {
     err ? console.error(err) : console.log("MongoDB Connected!")
 });
 
-app.listen(port || process.env.PORT, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Vegetable Shop Backend Server Running on port ${port}`)
 })

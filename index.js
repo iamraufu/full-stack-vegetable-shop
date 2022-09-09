@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000 || process.env.PORT
+const port = 5000
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -88,6 +88,6 @@ client.connect(err => {
     err ? console.error(err) : console.log("MongoDB Connected!")
 });
 
-app.listen(port, () => {
+app.listen(port || process.env.PORT, () => {
     console.log(`Vegetable Shop Backend Server Running on port ${port}`)
 })
